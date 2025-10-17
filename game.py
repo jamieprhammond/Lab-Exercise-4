@@ -199,18 +199,13 @@ def menu(exits):
     pass
 
     while True: # Loop until a valid exit is chosen
-        print_menu(exits) # Display the menu
-
+        print_menu(exits) # Print the menu of exits
         user_input = input() # Get the player's input
-
         normalised_input = normalise_input(user_input) # Normalise the input
 
-        if is_valid_exit(exits, normalised_input): # Check if the input is valid    
-            return normalised_input # If it is, return the input
+        if is_valid_exit(exits, normalised_input): # If the exit is valid
+            return normalised_input # Return the chosen exit
         
-        else:
-            print("You cannot go there.") # Let the player know the choice is invalid
-
 
 
 def move(exits, direction):
